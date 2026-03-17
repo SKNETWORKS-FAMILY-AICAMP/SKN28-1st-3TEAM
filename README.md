@@ -124,28 +124,56 @@
 │
 ├─ data/
 │  ├─ raw/                      # 원본 데이터 파일
+│  │  ├─ charge_fee/            # 충전 요금 원본 엑셀
+│  │  │  └─ charge_fee(2026-03-15).xls
+│  │  │
 │  │  ├─ charger/               # 충전소 원본 CSV
+│  │  │  ├─ 한국전력공사_충전소의 위치 및 현황 정보_20250630.csv
+│  │  │  └─ 한국환경공단_전기차 충전소 위치 및 운영정보_20221027.csv
+│  │  │
 │  │  ├─ ev_registration/       # 전기차 등록 원본 파일
-│  │  ├─ faq/                   # FAQ 원본/크롤링 결과
-│  │  │  └─ seoul_ev_faq.xlsx   # 서울시 FAQ 원본 저장 파일
+│  │  │  ├─ 전기차수(EV_AREA_CAR_STATE)_20190925.csv
+│  │  │  ├─ 한국전력공사_지역별 전기차 현황정보.csv
+│  │  │  ├─ 한국전력공사_지역별 전기차 현황정보 (1).csv
+│  │  │  ├─ 한국전력공사_지역별 전기차 현황정보_201008.csv
+│  │  │  ├─ 한국전력공사_지역별 전기차 현황정보_20240731.csv
+│  │  │  ├─ 한국전력공사_지역별 전기차 현황정보_20250228.csv
+│  │  │  └─ 201001_202603_전기차등록현황.xls
+│  │  │
+│  │  ├─ faq/                   # FAQ 원본 파일
+│  │  │  ├─ seoul_ev_faq.xlsx   # 서울시 FAQ 원본 저장 파일
+│  │  │  └─ 전기차 FAQ_제조사별.xlsx
+│  │  │
 │  │  └─ subsidy/               # 보조금 원본 엑셀
+│  │     ├─ national subsidy.xlsx
+│  │     └─ 무공해_지자체_보조금.xlsx
 │  │
 │  ├─ processed/                # 전처리 완료 데이터
 │  │  ├─ charger/               # 충전소 가공 데이터
+│  │  │  ├─ charger_charger.csv
+│  │  │  ├─ charger_merged.csv
+│  │  │  └─ charger_station.csv
+│  │  │
 │  │  └─ ev_registration/       # 전기차 등록 가공 데이터
+│  │     ├─ ev_registration_monthly_long.csv
+│  │     └─ ev_registration_monthly_wide.csv
 │  │
 │  └─ webcrawling/              # 크롤링 산출물 및 개인 작업 폴더
-│     ├─ 김지효/                # 팀원 크롤링/실험 자료
 │     ├─ 손지은/                # 뉴스/FAQ/워드클라우드 관련 파일
-│     │  ├─ ev_seoul_faq_crawler.py         # 서울시 FAQ 크롤링 스크립트
-│     │  ├─ naver_news_crawling.py          # 네이버 뉴스 수집 스크립트
-│     │  ├─ word_cloud.py                   # 키워드 빈도/워드클라우드 생성
-│     │  ├─ seoul_ev_faq_categorized.xlsx   # FAQ 분류 완료 파일
-│     │  ├─ keyword_frequency.xlsx          # 뉴스 키워드 빈도 결과
-│     │  ├─ wordcloud.png                   # 워드클라우드 이미지
-│     │  └─ naver_news_전기차 보조금.xlsx      # 뉴스 수집 결과 파일
-│     ├─ 신혜지/                # 팀원 크롤링/실험 자료
-│     └─ 이건우/                # 팀원 크롤링/실험 자료
+│     │  ├─ ev_seoul_faq_crawler.py
+│     │  ├─ naver_news_crawling.py
+│     │  ├─ word_cloud.py
+│     │  ├─ keyword_frequency.xlsx
+│     │  ├─ naver_news_전기차 보조금.xlsx
+│     │  ├─ seoul_ev_faq (1).xlsx
+│     │  ├─ seoul_ev_faq_categorized.xlsx
+│     │  └─ wordcloud.png
+│     │
+│     └─ 신혜지/                # 현대 FAQ / 뉴스 수집 관련 파일
+│        ├─ hyundai_faq.py
+│        ├─ hyundai_faq_api_data.xlsx
+│        ├─ naver_news.py
+│        └─ naver_news_result.csv
 │
 ├─ sql/
 │  ├─ schema.sql                # MySQL 테이블 생성 SQL
@@ -156,10 +184,13 @@
 ├─ docs/
 │  ├─ ERD.png                   # ERD 이미지
 │  ├─ project_description.md    # 프로젝트 기획 문서
-│  ├─ README.md                 # 문서용 보조 README
-│  └─ images/                   # README용 이미지
+│  ├─ requirements.md           # 요구사항/정리 문서
+│  └─ images/                   # 문서용 이미지
 │     ├─ 1_team_introduction.png
 │     └─ 7_together.png
+│
+├─ db/
+│  └─ query_data.py             # 별도 보관된/중복된 query_data 스크립트
 │
 └─ src/
    ├─ __init__.py               # src 패키지 선언
@@ -168,25 +199,27 @@
    │  ├─ __init__.py
    │  └─ main_app.py            # Streamlit 메인 실행 파일
    │
+   ├─ config/
+   │  ├─ __init__.py
+   │  └─ settings.py            # 환경변수 및 공통 설정
+   │
    ├─ data/
    │  ├─ __init__.py
-   │  ├─ ev_registration.py     # 전기차 등록 현황 관련 처리
    │  ├─ clean_ev_data.py       # 전기차 데이터 정제
    │  ├─ region_processing.py   # 지역명 표준화 및 지역 컬럼 가공
    │  ├─ region_ev_analysis.py  # 지역별 전기차 분석 로직
    │  ├─ region_ev_section.py   # 지역별 전기차 화면 섹션
-   │  ├─ charger_section.py     # 충전소 운영 정보 화면 섹션
    │  ├─ charger_access_analysis.py # 충전소 접근성/요약 분석
+   │  ├─ charger_section.py     # 충전소 운영 정보 화면 섹션
    │  ├─ charging_fee_section.py # 충전 요금 화면 섹션
    │  ├─ subsidy_section.py     # 국고 보조금 정책 화면 섹션
    │  ├─ local_subsidy_section.py # 지자체 보조금 정책 화면 섹션
    │  ├─ faq_section.py         # 서울시 FAQ 화면 섹션
-   │  ├─ brand_faq_section.py.py  # 브랜드(제조사) 별 FAQ 화면 섹션
+   │  ├─ brand_faq_section.py   # 브랜드(제조사)별 FAQ 화면 섹션
    │  └─ news_analysis_section.py # 뉴스 기사 분석 화면 섹션
    │
    ├─ db/
    │  ├─ __init__.py
-   │  ├─ db_connect.py          # MySQL 연결 설정
    │  ├─ insert_data.py         # 전처리 데이터 적재
    │  └─ query_data.py          # Streamlit 조회용 데이터 로드/정리
    │
@@ -194,10 +227,6 @@
    │  ├─ __init__.py
    │  ├─ kakao_map.py           # 카카오맵 시각화
    │  └─ map_service.py         # 카카오 REST API 검색/좌표 변환
-   │
-   ├─ config/
-   │  ├─ __init__.py
-   │  └─ settings.py            # 환경변수 및 공통 설정
    │
    └─ utils/
       ├─ __init__.py

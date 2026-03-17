@@ -285,8 +285,6 @@
 | 제조사별 FAQ | 서울시 전기차 FAQ |
 | ![image](https://github.com/user-attachments/assets/2c874e79-2ff6-4bb9-abc8-827d58713949) | ![image](https://github.com/user-attachments/assets/6d74b751-b781-4def-975d-44fdea5b7f18)
 
-<br><br><br>
-
 ---
 
 ## ✨ 한 줄 정리

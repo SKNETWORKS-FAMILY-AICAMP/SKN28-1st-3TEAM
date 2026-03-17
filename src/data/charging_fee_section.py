@@ -212,10 +212,10 @@ def render_charging_fee_page(charging_fee_data: pd.DataFrame) -> None:
 
     # fee_type 값이 있으면 그 값을 사용하고,
     # 없거나 비어 있으면 기본값으로 '대표'를 사용합니다.
-    fee_type_text = str(selected_fee_row.get('fee_type', '대표')).strip() or '대표'
+    #fee_type_text = str(selected_fee_row.get('fee_type', '대표')).strip() or '대표'
 
     # 요금유형을 metric으로 출력합니다.
-    info_column_3.metric("요금유형", fee_type_text)
+    #info_column_3.metric("요금유형", fee_type_text)
 
     # 예상 충전 비용 계산기 영역의 소제목을 출력합니다.
     st.subheader("예상 충전 비용 계산기")
@@ -225,19 +225,19 @@ def render_charging_fee_page(charging_fee_data: pd.DataFrame) -> None:
     charging_kwh = st.slider("충전량(kWh)", min_value=5, max_value=100, value=40, step=5)
 
     # 사용자가 어떤 요금 유형으로 계산할지 선택할 수 있도록 라디오 버튼을 출력합니다.
-    price_type = st.radio("요금 유형", ["회원 요금", "비회원 요금", "기본 요금"], horizontal=True)
+    price_type = st.radio("요금 유형", ["회원 요금", "비회원 요금"], horizontal=True)
 
     # 사용자가 선택한 요금 유형에 따라 적용할 단가를 결정합니다.
     if price_type == "비회원 요금":
         # 비회원 요금 선택 시 non_member_price_per_kwh 값을 사용합니다.
         selected_unit_price = selected_fee_row.get("non_member_price_per_kwh")
-    elif price_type == "기본 요금":
+    #elif price_type == "기본 요금":
         # 기본 요금 선택 시 base_price_per_kwh 값을 사용합니다.
-        selected_unit_price = selected_fee_row.get("base_price_per_kwh")
+        # selected_unit_price = selected_fee_row.get("base_price_per_kwh")
 
         # base_price_per_kwh 값이 없으면 회원가를 기본값처럼 대신 사용합니다.
-        if pd.isna(selected_unit_price):
-            selected_unit_price = selected_fee_row.get("member_price_per_kwh")
+        #if pd.isna(selected_unit_price):
+        #    selected_unit_price = selected_fee_row.get("member_price_per_kwh")
     else:
         # 그 외(회원 요금 선택)인 경우 회원가를 사용합니다.
         selected_unit_price = selected_fee_row.get("member_price_per_kwh")

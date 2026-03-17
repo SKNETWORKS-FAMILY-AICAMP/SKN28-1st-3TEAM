@@ -923,13 +923,16 @@ def render_region_ev_page(ev_registration_data: pd.DataFrame) -> None:
         "monthly_increase",
         "yoy_diff",
         "share_pct"
-    ]].copy()
+        ]].copy()
 
     # 기준월은 최신순, 지역명은 오름차순으로 정렬합니다.
     detail_df = detail_df.sort_values(["base_ym", "region_name"], ascending=[False, True])
 
+    # 화면에 표시하기 전, 기준월(base_ym) 컬럼은 제거합니다.
+    detail_df = detail_df.drop(columns=["base_ym"], errors="ignore")
+
     # 컬럼명을 한글 표시용 이름으로 변경합니다.
-    detail_df.columns = ["기준월", "연도", "월", "지역", "누적 등록대수", "월별 순증", "전년 동월 대비 증가", "점유율(%)"]
+    detail_df.columns = ["연도", "월", "지역", "누적 등록대수", "월별 순증", "전년 동월 대비 증가", "점유율(%)"]
 
     # 상세 데이터를 표 형태로 출력합니다.
     st.dataframe(detail_df, use_container_width=True, hide_index=True)

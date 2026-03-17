@@ -5,12 +5,6 @@
 
 <br>
 
-## 📎 발표자료
-
-- [발표자료 PDF 보기](./docs/presentation.pdf)
-
----
-
 ## 📌 프로젝트 한눈에 보기 
 
 - **프로젝트명**: 전기차 전환 시대, 지역별 전기차 이용 환경 분석 및 정보 제공 시스템
@@ -22,6 +16,12 @@
   - 전기차 보조금 및 정책 FAQ 제공
   - Streamlit 기반 통합 정보 서비스 구현
 - [Streamlit Cloud + AWS RDS(MySQL) 웹앱 배포](https://pratique-3team.streamlit.app)
+
+---
+
+## 📎 발표자료
+
+- [발표자료 PDF 보기](./docs/presentation.pdf)
 
 ---
 

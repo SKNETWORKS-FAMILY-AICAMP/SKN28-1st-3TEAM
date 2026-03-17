@@ -59,7 +59,7 @@
 
 ### ERD
 
-![ERD](./ERD.jpg)
+https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-3TEAM/blob/main/docs/ERD.png
 
 ### 테이블 정의
 

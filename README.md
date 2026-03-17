@@ -112,7 +112,7 @@
 
 ---
 
-## 🗂 프로젝트 구조 (구축 완료 후 수정 필요)
+## 🗂 프로젝트 구조
 
 ```bash
 🚘 TeamProject01_car1/
@@ -310,52 +310,52 @@ streamlit run ./src/app/main_app.py
 
 | 지역별 전기차 등록현황 |
 |--|
-| ![image](.docs/images/화면구현_1.png) |
+| ![image](./docs/images/화면구현_1.png) |
 
 | 지역별 전기차 등록현황 - 전국 추세 |
 |--|
-| ![image](.docs/images/화면구현_2.png) |
+| ![image](./docs/images/화면구현_2.png) |
 
 | 지역별 전기차 등록현황 - 지역 비교 |
 |--|
-| ![image](.docs/images/화면구현_3.png) |
+| ![image](./docs/images/화면구현_3.png) |
 
 | 지역별 전기차 등록현황 - 연도별 분석 |
 |--|
-| ![image](.docs/images/화면구현_4.png) |
+| ![image](./docs/images/화면구현_4.png) |
 
 | 전기차 충전 정보 - 충전소 위치 검색 |
 |--|
-| ![image](.docs/images/화면구현_5.png) |
+| ![image](./docs/images/화면구현_5.png) |
 
 | 전기차 충전 정보 - 충전 요금 관련 |
 |--|
-| ![image](.docs/images/화면구현_6.png) |
+| ![image](./docs/images/화면구현_6.png) |
 
 | 보조금 정책 - 국고 보조금 정책 정보  |
 |--|
-| ![image](.docs/images/화면구현_7.png) |
+| ![image](./docs/images/화면구현_7.png) |
 
 | 보조금 정책 - 지자체 보조금 정책 정보  |
 |--|
-| ![image](.docs/images/화면구현_8.png) |
+| ![image](./docs/images/화면구현_8.png) |
 
 
 | 전기차 FAQ - 브랜드별 전기차 FAQ |
 |--|
-| ![image](.docs/images/화면구현_9.png) |
+| ![image](./docs/images/화면구현_9.png) |
 
 | 전기차 FAQ - 서울시 전기차 FAQ |
 |--|
-| ![image](.docs/images/화면구현_10.png) |
+| ![image](./docs/images/화면구현_10.png) |
 
 | 뉴스 기사 분석 - '전기차 보조금' 키워드 분석 |
 |--|
-| ![image](.docs/images/화면구현_11.png) |
+| ![image](./docs/images/화면구현_11.png) |
 
 | 뉴스 기사 분석 - 워드 클라우드 생성 |
 |--|
-| ![image](.docs/images/화면구현_12.png) |
+| ![image](./docs/images/화면구현_12.png) |
 
 ---
 

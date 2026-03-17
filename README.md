@@ -235,6 +235,39 @@
 
 ---
 
+## 🚀 전체 실행 순서 가이드
+
+프로젝트를 로컬 환경에서 실행하려면 아래 순서대로 진행해주세요.
+
+```python
+git clone https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-3TEAM.git
+cd SKN28-1st-3TEAM
+
+# 가상환경 생성 및 활성화
+python3 -m venv venv
+venv\Scripts\activate  # Windows, Mac: source venv/bin/activate 
+
+# 패키지 설치
+pip install -r requirements.txt
+
+# 이후 .env 파일 생성 및 설정
+# 이후 MySQL에서 아래 순서대로 실행
+# 1) sql/create_user.sql
+# 2) USE car1_db;
+# 3) sql/schema.sql
+# 4) sql/view.sql
+# 5) (선택) sql/analysis.sql
+# analysis.sql은 분석/확인용 SQL 모음으로, 앱 실행 자체에는 필수는 아닙니다.
+
+# 데이터 적재
+python ./src/db/insert_data.py
+
+# Streamlit 실행
+streamlit run ./src/app/main_app.py
+```
+
+---
+
 ## 🛠 기술 스택 및 협업 도구
 
 <p>

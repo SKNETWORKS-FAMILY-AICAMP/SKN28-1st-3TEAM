@@ -298,9 +298,15 @@ streamlit run ./src/app/main_app.py
 
 ---
 
-## 📂 문서 및 이미지
+## 🏞️ ERD
+- ![ERD](./docs/ERD.png)
 
-- [ERD 이미지](./docs/ERD.png)
+관계있는 모든 엔터티는 1:N 비식별 관계이며, 독립 엔터티 중 faq_item은 정규화 과정을 통해 분리할 수도 있으나 이번 프로젝트에서는 분리하지 않았습니다.
+
+---
+
+## 📂 문서
+
 - [프로젝트 설명 문서](./docs/project_description.md)
 - [파이썬 패키지 설명 문서](./docs/requirements.md)
 

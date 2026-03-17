@@ -169,11 +169,27 @@
 │     │  ├─ seoul_ev_faq_categorized.xlsx
 │     │  └─ wordcloud.png
 │     │
-│     └─ 신혜지/                # 현대 FAQ / 뉴스 수집 관련 파일
-│        ├─ hyundai_faq.py
-│        ├─ hyundai_faq_api_data.xlsx
-│        ├─ naver_news.py
-│        └─ naver_news_result.csv
+│     ├─ 신혜지/                # 현대 FAQ / 뉴스 수집 관련 파일
+│     │  ├─ hyundai_faq.py
+│     │  ├─ hyundai_faq_api_data.xlsx
+│     │  ├─ naver_news.py
+│     │  └─ naver_news_result.csv
+│     │
+│     ├─ 김지효/                # 국고 보조금 / 지자체 보조금 수집 관련 파일
+│     │  ├─ 1_국고보조금.py
+│     │  ├─ 2_국고보조금_수소차.py
+│     │  ├─ 3_지자체보조금.py
+│     │  ├─ 무공해_국고보조금v2.xlsx
+│     │  └─ 무공해_지자체_보조금.xlsx
+│     │
+│     └─ 이건우/                # 전기차 브랜드 별 FAQ 수집 관련 파일
+│        ├─ bmw_article_crawler.py
+│        ├─ bmw_faq.xlsx
+│        ├─ byd_faq.xlsx
+│        ├─ kia_faq.xlsx
+│        ├─ kia_faq_crawler.py
+│        ├─ byd_faq_crawler.py
+│        └─ BYD_FAQ_Korean.xlsx
 │
 ├─ sql/
 │  ├─ schema.sql                # MySQL 테이블 생성 SQL
@@ -188,9 +204,6 @@
 │  └─ images/                   # 문서용 이미지
 │     ├─ 1_team_introduction.png
 │     └─ 7_together.png
-│
-├─ db/
-│  └─ query_data.py             # 별도 보관된/중복된 query_data 스크립트
 │
 └─ src/
    ├─ __init__.py               # src 패키지 선언

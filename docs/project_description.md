@@ -12,11 +12,8 @@
 | 단계 | 내용 |
 |:---:|:---|
 | **① 수집** | 공공데이터 CSV/XLS · 웹 크롤링 (FAQ/뉴스) · 카카오맵 REST API |
-| ↓ | |
 | **② 전처리** | `src/data/` — 정제, 지역명 표준화, 집계 |
-| ↓ | |
 | **③ 저장** | `data/processed/` CSV (기본) · MySQL DB (선택) |
-| ↓ | |
 | **④ 서비스** | Streamlit 대시보드 (`src/app/main_app.py`) |
 
 ### 데이터 로딩 전략 (Fallback 구조)

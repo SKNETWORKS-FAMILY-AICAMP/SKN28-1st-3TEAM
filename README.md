@@ -175,9 +175,13 @@
    │  ├─ region_processing.py   # 지역명 표준화 및 지역 컬럼 가공
    │  ├─ region_ev_analysis.py  # 지역별 전기차 분석 로직
    │  ├─ region_ev_section.py   # 지역별 전기차 화면 섹션
+   │  ├─ charger_section.py     # 충전소 운영 정보 화면 섹션
    │  ├─ charger_access_analysis.py # 충전소 접근성/요약 분석
-   │  ├─ subsidy_section.py     # 보조금 정책 화면 섹션
+   │  ├─ charging_fee_section.py # 충전 요금 화면 섹션
+   │  ├─ subsidy_section.py     # 국고 보조금 정책 화면 섹션
+   │  ├─ local_subsidy_section.py # 지자체 보조금 정책 화면 섹션
    │  ├─ faq_section.py         # 서울시 FAQ 화면 섹션
+   │  ├─ brand_faq_section.py.py  # 브랜드(제조사) 별 FAQ 화면 섹션
    │  └─ news_analysis_section.py # 뉴스 기사 분석 화면 섹션
    │
    ├─ db/

@@ -1153,3 +1153,59 @@ def load_brand_faq_data() -> pd.DataFrame:
         ['brand', 'category', 'faq_number', 'question'],
         na_position='last',
     ).reset_index(drop=True)
+
+def load_local_subsidy_data() -> pd.DataFrame:
+    local_subsidy_excel_path = _find_first_existing_path(
+        ['무공해_지자체_보조금.xlsx'],
+        [
+            RAW_DIR / 'subsidy',
+            RAW_DIR,
+            PROCESSED_DIR,
+            PROJECT_ROOT / 'data',
+            Path.cwd(),
+            Path('/mnt/data'),
+        ],
+    )
+
+    if local_subsidy_excel_path is None or not local_subsidy_excel_path.exists():
+        return pd.DataFrame(
+            [
+                ['서울특별시', '60', '700'],
+                ['부산광역시', '280', '1100'],
+                ['경기도', '200~484', '1,000~1,250'],
+                ['제주특별자치도', '400', '-'],
+            ],
+            columns=['region', 'ev_subsidy', 'hydrogen_subsidy'],
+        )
+
+    local_subsidy_data = pd.read_excel(local_subsidy_excel_path, sheet_name=0)
+
+    local_subsidy_data = _standardize_columns(
+        local_subsidy_data,
+        {
+            '시도': 'region',
+            '전기자동차': 'ev_subsidy',
+            '수소자동차': 'hydrogen_subsidy',
+        },
+    )
+
+    required_columns = ['region', 'ev_subsidy', 'hydrogen_subsidy']
+    for required_column in required_columns:
+        if required_column not in local_subsidy_data.columns:
+            local_subsidy_data[required_column] = pd.NA
+
+    local_subsidy_data = local_subsidy_data[required_columns].copy()
+
+    for column_name in ['region', 'ev_subsidy', 'hydrogen_subsidy']:
+        local_subsidy_data[column_name] = (
+            local_subsidy_data[column_name]
+            .fillna('')
+            .astype(str)
+            .str.strip()
+        )
+
+    local_subsidy_data = local_subsidy_data[
+        local_subsidy_data['region'] != ''
+    ].reset_index(drop=True)
+
+    return local_subsidy_data

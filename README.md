@@ -25,6 +25,16 @@
 
 ---
 
+## 🎥 시연 영상
+
+<video width="900" controls>
+  <source src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-3TEAM/main/docs/SKN28-1st-3TEAM.mp4" type="video/mp4">
+</video>
+
+재생이 안 보이면 [영상 바로 보기](https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN28-1st-3TEAM/main/docs/SKN28-1st-3TEAM.mp4)
+
+---
+
 ## 👥 팀 소개
 
 ### 1) 팀명
